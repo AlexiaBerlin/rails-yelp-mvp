@@ -1,19 +1,20 @@
 <div class="container mt-5">
-  <h1>Restaurant</h1>
+  <h1>All Restaurants</h1>
 
-  <ul id="restaurants">
+  <ol id="restaurants">
     <% @restaurants.each do |restaurant| %>
       <li>
         <%= link_to restaurant.name, restaurant_path(restaurant) %>
         <%= restaurant.address %>
+        <%= restaurant.phone_number %>
         <%= restaurant.category %>
       </li>
     <% end %>
-  </ul>
+  </ol>
 
   <hr>
 
   <%= link_to new_restaurant_path do %>
-    <i class="fa-solid fa-plus"></i> Add a new Restaurant
+    <%= link_to "Add a new Restaurant", new_restaurant_path, class: 'btn btn-primary' %>
   <% end %>
 </div>
